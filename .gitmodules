@@ -1,0 +1,4 @@
+[submodule "m-epics-keysight_33500x"]
+	path = m-epics-keysight_33500x
+	url = https://bitbucket.org/europeanspallationsource/m-epics-keysight_33500x.git
+	ignore = dirty
