@@ -1,0 +1,22 @@
+file "keysight-33500x-source.template"
+{
+	pattern { SOURCE }
+
+	{ 1 }
+	{ 2 }
+}
+
+file "keysight-33500x-dest.template"
+{
+	pattern { DEST }
+
+	{ 1 }
+	{ 2 }
+}
+
+file "keysight-33500x.template"
+{
+	pattern {}
+
+	{}
+}
