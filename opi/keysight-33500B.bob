@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <macros>
+    <DEVICE>SRFLAB-33522B</DEVICE>
+    <SOURCE>1</SOURCE>
+  </macros>
+  <width>600</width>
+  <height>420</height>
+  <background_color>
+    <color red="220" green="220" blue="220">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Keysight 33500B Series Waveform Generator</text>
+    <width>600</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="148" blue="202">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Channels</name>
+    <macros>
+      <DEVICE>SRFLAB-33522B</DEVICE>
+    </macros>
+    <tabs>
+      <tab>
+        <name>CHANNEL 1</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <file>channel.opi</file>
+            <macros>
+              <SOURCE>1</SOURCE>
+            </macros>
+            <y>4</y>
+            <width>550</width>
+            <height>250</height>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+      <tab>
+        <name>CHANNEL 2</name>
+        <children>
+          <widget type="embedded" version="2.0.0">
+            <name>Linking Container</name>
+            <file>channel.opi</file>
+            <macros>
+              <SOURCE>2</SOURCE>
+            </macros>
+            <y>4</y>
+            <width>550</width>
+            <height>250</height>
+            <actions>
+            </actions>
+            <border_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </border_color>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>24</x>
+    <y>60</y>
+    <width>552</width>
+    <height>285</height>
+    <background_color>
+      <color red="220" green="220" blue="220">
+      </color>
+    </background_color>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Channel 1" prop_id="tab_0_title" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"CHANNEL 1, ON"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <expression>"CHANNEL 1, OFF"</expression>
+        </exp>
+        <pv_name>$(DEVICE):1:OUT:RBV</pv_name>
+      </rule>
+      <rule name="Channel 2" prop_id="tab_1_title" out_exp="true">
+        <exp bool_exp="pv0 == 1">
+          <expression>"CHANNEL 2, ON"</expression>
+        </exp>
+        <exp bool_exp="pv0 == 0">
+          <expression>"CHANNEL 2, OFF"</expression>
+        </exp>
+        <pv_name>$(DEVICE):2:OUT:RBV</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Outputs</name>
+    <x>330</x>
+    <y>360</y>
+    <width>220</width>
+    <height>50</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="bool_button" version="2.0.0">
+      <name>CHANNEL 1</name>
+      <pv_name>$(DEVICE):1:OUT</pv_name>
+      <bit>-1</bit>
+      <height>50</height>
+      <off_label>1</off_label>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_label>1</on_label>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Foreground Color" prop_id="foreground_color" out_exp="true">
+          <exp bool_exp="pv0 == 1">
+            <expression>ColorFontUtil.getColorFromRGB(255,255,255)</expression>
+          </exp>
+          <pv_name>$(DEVICE):1:OUT:RBV</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="bool_button" version="2.0.0">
+      <name>CHANNEL 2</name>
+      <pv_name>$(DEVICE):2:OUT</pv_name>
+      <bit>-1</bit>
+      <x>120</x>
+      <height>50</height>
+      <off_label>2</off_label>
+      <off_color>
+        <color red="0" green="100" blue="0">
+        </color>
+      </off_color>
+      <on_label>2</on_label>
+      <on_color>
+        <color red="0" green="255" blue="0">
+        </color>
+      </on_color>
+      <show_led>false</show_led>
+      <font>
+        <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="150" green="150" blue="150">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Foreground Color" prop_id="foreground_color" out_exp="true">
+          <exp bool_exp="pv0 == 1">
+            <expression>ColorFontUtil.getColorFromRGB(255,255,255)</expression>
+          </exp>
+          <pv_name>$(DEVICE):2:OUT:RBV</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>
