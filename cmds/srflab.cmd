@@ -4,10 +4,11 @@ require keysight_33500x,1.0.1
 
 epicsEnvSet("STREAM_PROTOCOL_PATH","$(keysight_33500x_DB)")
 
-epicsEnvSet("PREFIX","SRFLAB-33522B")
+epicsEnvSet("PREFIX","OFF-LAB:SRF-WFG-01")
 epicsEnvSet("IPADDR","172.30.155.17")
 epicsEnvSet("IPPORT","5025")
-epicsEnvSet("TYPE","33522B")
+#epicsEnvSet("TYPE","33522B")
+epicsEnvSet("TYPE","33500x")
 
 #Specifying the TCP endpoint and port name
 drvAsynIPPortConfigure("$(PREFIX)-asyn-port", "$(IPADDR):$(IPPORT)")

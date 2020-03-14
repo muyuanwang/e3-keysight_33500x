@@ -73,7 +73,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Frequency</name>
-    <text>Freequency:</text>
+    <text>Frequency:</text>
     <y>40</y>
     <foreground_color>
       <color red="0" green="0" blue="0">

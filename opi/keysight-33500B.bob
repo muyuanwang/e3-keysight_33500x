@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <macros>
-    <DEVICE>SRFLAB-33522B</DEVICE>
+    <DEVICE>OFF-LAB:SRF-WFG-01</DEVICE>
     <SOURCE>1</SOURCE>
   </macros>
   <width>600</width>
-  <height>420</height>
+  <height>450</height>
   <background_color>
     <color red="220" green="220" blue="220">
     </color>
@@ -14,7 +14,7 @@
   </actions>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>Keysight 33500B Series Waveform Generator</text>
+    <text>$(DEVICE)</text>
     <width>600</width>
     <height>50</height>
     <font>
@@ -43,7 +43,7 @@
   <widget type="tabs" version="2.0.0">
     <name>Channels</name>
     <macros>
-      <DEVICE>SRFLAB-33522B</DEVICE>
+      <DEVICE>OFF-LAB:SRF-WFG-01</DEVICE>
     </macros>
     <tabs>
       <tab>
@@ -89,10 +89,10 @@
         </children>
       </tab>
     </tabs>
-    <x>24</x>
+    <x>15</x>
     <y>60</y>
-    <width>552</width>
-    <height>285</height>
+    <width>570</width>
+    <height>310</height>
     <background_color>
       <color red="220" green="220" blue="220">
       </color>
@@ -124,7 +124,7 @@
   <widget type="group" version="2.0.0">
     <name>Outputs</name>
     <x>330</x>
-    <y>360</y>
+    <y>381</y>
     <width>220</width>
     <height>50</height>
     <style>3</style>
